@@ -6,7 +6,8 @@ RUN DEBIAN_FRONTEND=noninteractive \
 		php5-cli \
 		php5-mongo \
 	&& \
-	apt-get clean
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
 
 ADD https://github.com/bobthecow/genghis/raw/master/genghis.php /root/
 
