@@ -1,10 +1,11 @@
 FROM pataquets/ubuntu:trusty
 
-RUN DEBIAN_FRONTEND=noninteractive \
+RUN \
 	apt-get update && \
-	apt-get -y install \
-		php5-cli \
-		php5-mongo \
+	DEBIAN_FRONTEND=noninteractive \
+		apt-get -y install \
+			php5-cli \
+			php5-mongo \
 	&& \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
